@@ -1,0 +1,198 @@
+:root{
+    --main-green : #35DF91;
+    --main-dark: #121E2A;
+    --dark-grey: #263950;
+    --blue-grey: #7295b3;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, 'san-serif';
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: var(--main-dark);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.container{
+    max-width: 380px;
+    width: min(380px, 90%);
+    text-align: center;
+}
+
+.qoute-container{
+    position: relative;
+    margin-top: 2rem;
+    border-radius: 8px;
+    background-color: var(--dark-grey);
+}
+
+.btn{
+    display: inline-block;
+    width: 6rem;
+    height: 45px;
+    gap: 4px;
+    color: var(--main-dark);
+    font-weight: 600;
+    background-color: var(--main-green);
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s all ease;
+}
+
+.btn *{
+    cursor: pointer;
+}
+
+.btn:hover{
+    color: #fff;
+}
+
+.text-green{
+    color: var(--main-green);
+}
+
+.container header h1{
+    font-size: 2rem;
+}
+
+.container header p{
+    font-size: .8rem;
+    font-style: italic;
+    color: var(--blue-grey);
+}
+
+.qoute-container .btn{
+    top: 15px;
+    right: 15px;
+    position: absolute;
+}
+
+.qoute-container .btn.random{
+    bottom: 0;
+    left: 0;
+}
+
+.qoute-overlay{
+    display: block;
+    text-align: start;
+    padding: 0 15px;
+    font-size: 5rem;
+    color: var(--main-dark);
+}
+
+.qoute-overlay:last-of-type{
+    text-align: end;
+}
+
+.qoute-wrapper{
+    width: 80%;
+    margin: 0 auto;
+}
+
+#qoute{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.qoute-writer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.qoute-writer::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-dark);
+}
+
+.qoute-writer *{
+    padding: 0 4px;
+    background-color: var(--dark-grey);
+    z-index: 2;
+}
+
+.btn-random{
+    position: absolute;
+    transform: translateX(-50%);
+    bottom: -32px;
+    outline: none;
+    border: none;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 5px solid var(--main-dark);
+    background-color: var(--main-green);
+}
+
+.btn-random i{
+    font-size: 1.5rem;
+}
+
+.container footer{
+    margin-top: 3rem;
+    color: var(--blue-grey);
+}
+
+.container footer a{
+    color: var(--blue-grey);
+}
+
+.container footer span{
+    font-size: .8rem;
+}
+
+.icon_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-random.active i{
+    animation: rotation .3s linear;
+}
+
+#qoute.active{
+    animation: scaler .3s linear;
+}
+
+.qoute-writer.active{
+    animation: scaler .3s linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes scaler {
+    from {
+        scale: 0.8;
+        opacity: 0.4;
+    }
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
